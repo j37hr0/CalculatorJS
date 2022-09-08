@@ -1,0 +1,36 @@
+button {
+    height: 100px;
+    width: 100px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: rgb(25, 204, 236);
+    transition: 0.3s;
+}
+
+.number-container{
+    border: 20px solid gray;
+    max-width: 450px;
+    padding: 10px;
+    background-color: gray; 
+    border-radius: 0px 0px 10px 10px;
+}
+
+.function-row button {
+    width: 200px; 
+}
+
+.display {
+    background-color: black;
+    height: 120px;
+    width: 510px;
+    color: white;
+    text-align:end;
+    font-size: 50px;
+    padding-top: 5px;
+    border-radius: 10px 10px 0px 0px;
+}
