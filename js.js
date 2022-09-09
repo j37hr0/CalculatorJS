@@ -1,6 +1,6 @@
 const displayValue = "";
 let buttons = document.querySelectorAll(".numberClass")
-const display = document.querySelectorAll("#current-display");
+const display = document.getElementById("current-display");
 console.log(display)
 
 //add event listeners on click for number buttons
@@ -49,15 +49,13 @@ function operate(type, a, b) {
 }
 //push button numbers
 function pushButtonN(){
-    display.textContent = "";
     let text = this.textContent;
-    display.textContent = text;
+    display.innerHTML = text;
     console.log(text);
-
-
+    updateDisplay(text);
 }
-//populate display (might be same as push button)
-// function populateDisplay(){
 
-// }
+function updateDisplay(v){
+    display.textContent = v;
+}
 
