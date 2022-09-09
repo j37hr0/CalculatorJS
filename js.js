@@ -53,12 +53,17 @@ function pushButtonN(){
     console.log(currentText)
     updateDisplay();
 }
-
+//update display function
 function updateDisplay(){
     display.textContent = currentText;
 }
-
+//clear button function
 function clearButton(){
     currentText = "";
+    updateDisplay();
+}
+//delete button function
+function deleteButton(){
+    currentText = currentText.slice(0, -1);
     updateDisplay();
 }
