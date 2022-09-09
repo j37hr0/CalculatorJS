@@ -1,14 +1,16 @@
-const displayValue = "";
 let buttons = document.querySelectorAll(".numberClass")
 const display = document.getElementById("current-display");
+const functions = document.getElementsByClassName("functions")
 let currentText = "";
-console.log(display)
+console.log(functions)
 
 //add event listeners on click for number buttons
 for (button of buttons) {
     button.addEventListener('click', pushButtonN)}
 //add event listeners on click for function buttons
-
+for (func of functions){
+    func.addEventListener('click', getOperation)
+}
 
 //add
 function add(a, b){
@@ -39,7 +41,7 @@ function operate(type, a, b) {
     else if (type === "-"){
         return subtract(a, b)
     }
-    else if (type === "*"){
+    else if (type === "x"){
         return multiply(a, b)
     }
     else if (type === "/"){
@@ -66,4 +68,10 @@ function clearButton(){
 function deleteButton(){
     currentText = currentText.slice(0, -1);
     updateDisplay();
+}
+
+function getOperation(){
+    text = this.textContent;
+    console.log(this.textContent);
+    return text;
 }
