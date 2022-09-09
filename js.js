@@ -1,12 +1,11 @@
 const displayValue = "";
 let buttons = document.querySelectorAll(".numberClass")
-console.log(buttons)
+const display = document.querySelectorAll("#current-display");
+console.log(display)
+
 //add event listeners on click for number buttons
 for (button of buttons) {
-    button.addEventListener('click', function() {
-      console.log(this);
-    });
-  }
+    button.addEventListener('click', pushButtonN)}
 //add event listeners on click for function buttons
 
 
@@ -48,12 +47,17 @@ function operate(type, a, b) {
         return divide(a, b)
     }
 }
-//push button
-function pushButton(){
+//push button numbers
+function pushButtonN(){
+    display.textContent = "";
+    let text = this.textContent;
+    display.textContent = text;
+    console.log(text);
+
 
 }
 //populate display (might be same as push button)
-function populateDisplay(){
+// function populateDisplay(){
 
-}
+// }
 
