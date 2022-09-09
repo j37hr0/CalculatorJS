@@ -1,14 +1,13 @@
 const displayValue = "";
 let buttons = document.querySelectorAll(".numberClass")
 const display = document.getElementById("current-display");
+let currentText = "";
 console.log(display)
 
 //add event listeners on click for number buttons
 for (button of buttons) {
     button.addEventListener('click', pushButtonN)}
 //add event listeners on click for function buttons
-
-
 
 
 //add
@@ -50,12 +49,16 @@ function operate(type, a, b) {
 //push button numbers
 function pushButtonN(){
     let text = this.textContent;
-    display.innerHTML = text;
-    console.log(text);
-    updateDisplay(text);
+    currentText += text;
+    console.log(currentText)
+    updateDisplay();
 }
 
-function updateDisplay(v){
-    display.textContent = v;
+function updateDisplay(){
+    display.textContent = currentText;
 }
 
+function clearButton(){
+    currentText = "";
+    updateDisplay();
+}
