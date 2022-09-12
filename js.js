@@ -2,6 +2,10 @@ let buttons = document.querySelectorAll(".numberClass")
 const display = document.getElementById("current-display");
 const functions = document.getElementsByClassName("functions")
 let currentText = "";
+var func;
+var valueA;
+var valueB;
+var result;
 console.log(functions)
 
 //add event listeners on click for number buttons
@@ -73,5 +77,33 @@ function deleteButton(){
 function getOperation(){
     text = this.textContent;
     console.log(this.textContent);
-    return text;
+    valueA = currentText;
+    clearButton();
+    func = text;
+}
+
+function displayResult(r) {
+    display.textContent = r;
+}
+
+function equals(f, a, b) {
+    b = currentText;
+    a = valueA;
+    f = func;
+    console.log(a)
+    console.log(b)
+    console.log(f)
+    if (f === "+"){
+        result = add(a,b) 
+    }
+    else if (f === "-") {
+        result = subtract(a,b) 
+    }
+    else if (f === "x") {
+        result = multiply(a,b)
+    }
+    else if (f === "/") {
+        result = divide(a,b)
+    }
+    displayResult(result)
 }
