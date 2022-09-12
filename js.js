@@ -66,6 +66,9 @@ function updateDisplay(){
 //clear button function
 function clearButton(){
     currentText = "";
+    valueA = "";
+    valueB = "";
+    result = "";
     updateDisplay();
 }
 //delete button function
@@ -78,32 +81,37 @@ function getOperation(){
     text = this.textContent;
     console.log(this.textContent);
     valueA = currentText;
-    clearButton();
+    currentText = "";
     func = text;
 }
 
 function displayResult(r) {
-    display.textContent = r;
+    currentText = r;
+    updateDisplay()
 }
 
 function equals(f, a, b) {
-    b = currentText;
-    a = valueA;
+    b = Number(currentText);
+    a = Number(valueA);
     f = func;
     console.log(a)
     console.log(b)
     console.log(f)
     if (f === "+"){
-        result = add(a,b) 
+        let result = add(a,b)
+        // console.log(result) 
+        displayResult(result)
     }
     else if (f === "-") {
-        result = subtract(a,b) 
+        let result = subtract(a,b) 
+        displayResult(result)
     }
     else if (f === "x") {
-        result = multiply(a,b)
+        let result = multiply(a,b)
+        displayResult(result)
     }
     else if (f === "/") {
-        result = divide(a,b)
+        let result = divide(a,b)
+        displayResult(result)
     }
-    displayResult(result)
 }
